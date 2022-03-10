@@ -1,0 +1,36 @@
+.rect {
+  shape-rendering: geometricPrecision;
+  outline: 1px solid rgba(27, 31, 35, 0.06);
+  outline-offset: -1px;
+}
+.location-wrap {
+  position: absolute;
+  visibility: hidden;
+}
+.toolTip {
+  visibility: visible;
+  display: inline-block;
+  background-color: #24292f;
+  color: #fff;
+  font-size: 12px;
+  padding: 8px 16px;
+  z-index: 99999;
+  border-radius: 6px;
+  text-align: center;
+  position: absolute;
+  white-space: nowrap;
+  transition: all 0.05s;
+  transform: translate(calc(var(--xOffset)), -100%);
+}
+.toolTip::after {
+  position: absolute;
+  bottom: -10px;
+  left: calc(-1 * calc(var(--xOffset)));
+  width: 5px;
+  height: 5px;
+  box-sizing: border-box;
+  margin: 0 0 0 -4px;
+  content: " ";
+  border: 5px solid transparent;
+  border-top-color: #24292f;
+}
